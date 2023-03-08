@@ -13,4 +13,10 @@ class FoodTruck
   def stock(item, quantity)
     inventory[item] += quantity
   end
+
+  def potential_revenue
+    inventory.map do |item, quantity|
+      item.price * quantity
+    end.sum.to_f
+  end
 end
