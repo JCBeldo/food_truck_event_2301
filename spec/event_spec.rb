@@ -127,7 +127,7 @@ RSpec.describe Event do
       food_truck2.stock(item3, 25)
       food_truck2.stock(item4, 50)
 
-      expect(event.sorted_item_list).to eq('Apple Pie (Slice)', 'Banana Nice Cream', 'Peach-Raspberry Nice Cream', 'Peach Pie (Slice)')
+      expect(event.sorted_item_list).to eq(['Apple Pie (Slice)', 'Banana Nice Cream', 'Peach Pie (Slice)', 'Peach-Raspberry Nice Cream'])
     end
   end
 
