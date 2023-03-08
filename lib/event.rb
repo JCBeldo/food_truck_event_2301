@@ -30,6 +30,16 @@ class Event
     end.sum
   end
 
+  def sorted_item_list
+    names_of_items = []
+    food_trucks.each do |food_truck|
+      food_truck.inventory.each do |ft_item, quantity|
+        names_of_items.push(ft_item.name)
+      end
+    end
+    names_of_items.sort.uniq
+  end
+
   def overstocked_items
     all_items.select do |item|
       total_quantity(item) > 50 && food_trucks_that_sell(item).count > 1
